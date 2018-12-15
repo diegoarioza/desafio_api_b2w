@@ -3,6 +3,6 @@ from core.models import Planeta
 
 
 class PlanetaSerializer(ModelSerializer):
-    class Meta():
+    class Meta:
         model = Planeta
-        fields = ('nome', 'clima', 'terreno')
+        fields = ('id', 'nome', 'clima', 'terreno', 'qtde_planetas')
