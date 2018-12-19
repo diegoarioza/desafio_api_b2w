@@ -24,8 +24,9 @@ class PlanetasViewSet(ModelViewSet):
 
         return queryset
 
+    # Override Create
     def create(self, request, *args, **kwargs):
-        exist_planet_in_api = False
+        # exist_planet_in_api = False
         nome = request.POST.get('nome', None)
         clima = request.POST.get('clima', None)
         terreno = request.POST.get('terreno', None)
@@ -33,17 +34,16 @@ class PlanetasViewSet(ModelViewSet):
         try:
             req_api = requests.get('https://swapi.co/api/planets/?search=' + nome)
             qtde_planetas = len(req_api.json().get('results', None)[0].get('films', None))
-            if qtde_planetas > 0: exist_planet_in_api = True
+            # if qtde_planetas > 0: exist_planet_in_api = True
         except IndexError:
             qtde_planetas = 0
 
-        print(exist_planet_in_api)
+        # print(exist_planet_in_api)
         serializer = self.get_serializer(data={'nome':nome, 'clima':clima, 'terreno': terreno, 'qtde_planetas': qtde_planetas})
         serializer.is_valid(raise_exception=True)
 
         if Planeta.objects.filter(nome=nome).exists():
-
-            custom_msg = {'msg': 'Planeta ja esta cadastrado'}
+            custom_msg = {'msg': 'Planeta ja esta cadastrado, por favor tente atualizar os dados do planeta.'}
             headers = self.get_success_headers(serializer.data)
             return Response(custom_msg, status=status.HTTP_201_CREATED, headers=headers)
         else:
