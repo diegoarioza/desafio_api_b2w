@@ -1,14 +1,19 @@
-from django.test import TestCase
+from rest_framework.test import APIClient, APITestCase
+import json
 
-from core.models import Planeta
-
-class PlanetaTeste(TestCase):
+class StartWarsTest(APITestCase):
 
     def setUp(self):
-        self.planeta1 = Planeta.objects.create(nome='testeCase1')
-        self.planeta1.save()
+        self.user = 0
 
+        self.client = APIClient()
 
-    def test1(self):
-        self.assertEquals(self.planeta1,1)
+    def teste1(self):
+        resp = self.client.get('/starwars/')
 
+        self.assertEquals(resp.status_code, 200)
+
+    def teste2(self):
+        resp = self.client.get('/starwars/6/')
+
+        self.assertEquals(resp.status_code, 200)
