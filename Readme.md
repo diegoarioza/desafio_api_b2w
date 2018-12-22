@@ -27,4 +27,6 @@
 #### Baixe o repositorio   ``` git clone https://github.com/diegoarioza/desafio_api_b2w.git ```
 #### Entre na pasta do projeto ``` cd desafio_api_b2w/ ```
 #### Instale os requerimentos ``` pip3 install -r requirements.txt  ```
-#### Execute o runservert ``` python manage.py runserver ```
+#### Execute o runserver ``` python manage.py runserver ```
+
+#### OBS: Modo de execução somente para testes, em produção nutilize um webserver como apache ou nginx com wsgi (ex. gunicorn)
