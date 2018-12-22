@@ -27,6 +27,7 @@
 #### Baixe o repositorio   ``` git clone https://github.com/diegoarioza/desafio_api_b2w.git ```
 #### Entre na pasta do projeto ``` cd desafio_api_b2w/ ```
 #### Instale os requerimentos ``` pip3 install -r requirements.txt  ```
+#### Executar testes ``` python manage.py test ```
 #### Execute o runserver ``` python manage.py runserver ```
 
 #### Get planetas: http://127.0.0.1:8000/starwars/
