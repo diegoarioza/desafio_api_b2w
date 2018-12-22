@@ -1,11 +1,11 @@
 from rest_framework.test import APIClient, APITestCase
 
 
-
 class StartWarsTest(APITestCase):
 
     def setUp(self):
         self.client = APIClient()
+
 
     def test_get_empty(self):
         resp = self.client.get('/starwars/')
@@ -21,11 +21,8 @@ class StartWarsTest(APITestCase):
         # test return post
         self.assertEquals('Dagobah', resp.data.get('nome'))
         self.assertEquals(3, resp.data.get('qtde_planetas'))
-
-
         # test get after post
         resp = self.client.get('/starwars/')
-
         self.assertEquals(resp.status_code, 200)
         # test status code
         resp2 = list(resp.data[0].values())
