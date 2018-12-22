@@ -29,4 +29,10 @@
 #### Instale os requerimentos ``` pip3 install -r requirements.txt  ```
 #### Execute o runserver ``` python manage.py runserver ```
 
+#### Get planetas: http://127.0.0.1:8000/starwars/
+#### Get Planeta Individual: http://127.0.0.1:8000/starwars/9/
+#### Busca por id: http://127.0.0.1:8000/starwars/?id=9
+#### Busca por Nome: http://127.0.0.1:8000/starwars/?nome=Dagobah
+#### Busca Genérica: http://127.0.0.1:8000/starwars/?search=Dagobah
+
 #### OBS: Modo de execução somente para testes, em produção nutilize um webserver como apache ou nginx com wsgi (ex. gunicorn)
