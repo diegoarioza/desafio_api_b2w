@@ -35,4 +35,4 @@
 #### Busca por Nome: http://127.0.0.1:8000/starwars/?nome=Dagobah
 #### Busca Genérica: http://127.0.0.1:8000/starwars/?search=Dagobah
 
-#### OBS: Modo de execução somente para testes, em produção nutilize um webserver como apache ou nginx com wsgi (ex. gunicorn)
+#### OBS: Modo de execução somente para testes, em produção utilize um webserver como apache ou nginx com wsgi (ex. gunicorn)
