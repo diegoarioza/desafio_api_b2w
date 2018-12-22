@@ -1,19 +1,26 @@
 from rest_framework.test import APIClient, APITestCase
-import json
+
+
 
 class StartWarsTest(APITestCase):
 
     def setUp(self):
-        self.user = 0
-
         self.client = APIClient()
 
-    def teste1(self):
+    def test_get_empty(self):
         resp = self.client.get('/starwars/')
 
         self.assertEquals(resp.status_code, 200)
 
-    def teste2(self):
-        resp = self.client.get('/starwars/6/')
 
-        self.assertEquals(resp.status_code, 200)
+    def test_create_Dagobah(self):
+        # this post should return 'qtde_planetas == 3 and nome == Dagobah
+        resp = self.client.post('/starwars/', data={'nome': 'Dagobah'})
+        self.assertEquals('Dagobah', resp.data.get('nome'))
+        self.assertEquals(3, resp.data.get('qtde_planetas'))
+        print(resp.data)
+
+    def test_get_all(self):
+        resp = self.client.get('/starwars/')
+        print(resp.data)
+

@@ -27,9 +27,9 @@ class PlanetasViewSet(ModelViewSet):
     # Override Create
     def create(self, request, *args, **kwargs):
         # exist_planet_in_api = False
-        nome = request.POST.get('nome', None)
-        clima = request.POST.get('clima', None)
-        terreno = request.POST.get('terreno', None)
+        nome = request.POST.get('nome', '')
+        clima = request.POST.get('clima', '')
+        terreno = request.POST.get('terreno', '')
 
         try:
             req_api = requests.get('https://swapi.co/api/planets/?search=' + nome)
