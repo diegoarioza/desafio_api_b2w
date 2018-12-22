@@ -19,4 +19,12 @@
 ###### - Remover planeta
 
 ---
-Tutoia, execute 
+## Tutorial
+#### Entre na pasta em que ficará o projeto: ```cd projeto```
+#### Crie seu VirtualEnv   ``` python3 -m venv venv ```
+#### Ative seu virtualenv  ``` source venv/bin/activate ```
+#### Ative seu virtualenv  ``` source venv/bin/activate ```
+#### Baixe o repositorio   ``` git clone https://github.com/diegoarioza/desafio_api_b2w.git ```
+#### Entre na pasta do projeto ``` cd desafio_api_b2w/ ```
+#### Instale os requerimentos ``` pip3 install -r requirements.txt  ```
+#### Execute o runservert ``` python manage.py runserver ```
